@@ -1,7 +1,15 @@
 {% extends 'main/layout.html' %}
 
 {% block header %}
-    <h1>MainPage</h1>
-    <p>MainPage</p>
-    <a href="{% url 'about' %}">teste</a>
+<div class="headerNav">
+    <div class="headerNavLogo">
+        <img src="../Materials/img/drive-disk.png" alt="" />
+    </div>
+    <div class="headerNavSignin-link">
+        <a href="{% url 'registration' %}">Войти\зарегистрироваться</a>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="content"> </div>
 {% endblock %}

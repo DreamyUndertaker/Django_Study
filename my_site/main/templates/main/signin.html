@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block header %}
+<div class="headerNav">
+    <div class="headerNavLogo">
+        <a href="{% url 'home' %}">
+            <img src="../Materials/img/drive-disk.png" alt="" />
+        </a>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="content">
+    <form action="{% url 'userAccount' %}" class="form">
+        <h3 class="formHeader">Войдите в аккаунт</h3>
+        <input type="email" name="email" id="email" class="email" placeholder="email" />
+        <input
+            type="password"
+            name="password"
+            id="password"
+            class="password"
+            placeholder="password"
+        />
+        <input type="submit" value="Войти" class="button" />
+    </form>
+    <div class="linkToRegistration">
+        <a href="{% url 'registration' %}">Или зарегистрироваться</a>
+    </div>
+ </div>
+{% endblock %}
