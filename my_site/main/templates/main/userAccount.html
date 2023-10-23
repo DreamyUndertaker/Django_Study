@@ -1,14 +1,24 @@
 {% extends 'main/layout.html' %}
-
+{% load static %}
 {% block header %}
 <div class="headerNav">
     <div class="headerNavLogo">
         <a href="{% url 'home' %}">
-            <img src="../Materials/img/drive-disk.png" alt="" />
+            <img src="{% static 'main/img/logo.png' %}" alt="" />
         </a>
     </div>
 </div>
 {% endblock %}
 {% block content %}
-
+<div class="content">
+    <form action="" class="requestForm">
+        <input type="text" name="nameRequest" id="" placeholder="навзание жалобы" />
+        <input type="text" name="aboutRequest" id="" placeholder="описание жалобы" />
+        <select name="categoryRequest" class="category">
+            <option value=""></option>
+            <option value="1">Синий</option>
+            <option value="2">Зеленый</option>
+        </select>
+    </form>
+</div>
 {% endblock %}
