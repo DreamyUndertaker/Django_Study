@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block header %}
+<div class="headerNav">
+    <div class="headerNavLogo">
+        <img src="{% static 'main/img/logo.png' %}" alt="" />
+    </div>
+    <div class="headerNavSignin-link">
+        <a href="{% url 'registration' %}">Войти\зарегистрироваться</a>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="content">DB</div>
+{% endblock %}
