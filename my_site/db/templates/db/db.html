@@ -1,0 +1,30 @@
+{% extends 'db/layout_db.html' %}
+{% load static %}
+{% block header %}
+<div class="headerNav">
+    <div class="headerNavLogo">
+        <img src="{% static 'main/img/logo.png' %}" alt="" />
+    </div>
+    <div class="headerNavSignin-link">
+        <a href="{% url 'registration' %}">Войти\зарегистрироваться</a>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="content">
+    {% if db %}
+        {% for el in db %}
+            <div class="article">
+                <h3>
+                    {{ el.title }}
+                </h3>
+                <h5>
+                    {{ el.full_text }}
+                </h5>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>У вас нет заявок</p>
+    {% endif %}
+</div>
+{% endblock %}

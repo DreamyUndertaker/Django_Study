@@ -1,6 +1,8 @@
 from django.shortcuts import render
-
+from .models import Articles
 
 # Create your views here.
-def db(request):
-    return render(request, 'main/db.html')
+def db_home(request):
+    db = Articles.objects.all()
+    return render(request, 'db/db.html', {'db' : db})
+    
