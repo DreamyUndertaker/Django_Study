@@ -37,7 +37,7 @@
         padding-top: 40px;
         grid-template-areas: "nameRequest"
         "aboutRequest"
-        "category";
+        "buttonAdd";
         max-width: min-content;
         margin: auto;
         align-items: center;
@@ -53,8 +53,8 @@
     .aboutRequest{
         grid-area: aboutRequest;
     }
-    .category{
-        grid-area: category;
+    .buttonAdd{
+        grid-area: buttonAdd;
     }
 }
 @media (max-width: 720px){

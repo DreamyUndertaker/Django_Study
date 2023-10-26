@@ -44,6 +44,7 @@
     justify-items: center;
     justify-content: center;
     align-content: center;
+    grid-gap: 20px;
 }
 .form{
     grid-area: form;

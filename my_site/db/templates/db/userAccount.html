@@ -1,5 +1,6 @@
-{% extends 'main/layout.html' %}
+{% extends 'db/layout_db.html' %}
 {% load static %}
+{% block title %} Добавление записи {% endblock %}
 {% block header %}
 <div class="headerNav">
     <div class="headerNavLogo">
@@ -11,14 +12,12 @@
 {% endblock %}
 {% block content %}
 <div class="content">
-    <form action="" class="requestForm">
-        <input type="text" name="nameRequest" id="" placeholder="навзание жалобы" />
-        <input type="text" name="aboutRequest" id="" placeholder="описание жалобы" />
-        <select name="categoryRequest" class="category">
-            <option value=""></option>
-            <option value="1">Синий</option>
-            <option value="2">Зеленый</option>
-        </select>
+    <form class="requestForm" method="post">
+        {% csrf_token %} 
+        {{ form.title }} <br>
+        {{ form.full_text }} <br>
+        <span>{{ error }}</span>
+        <button type="submit" class="buttonAdd">Добавить</button>
     </form>
 </div>
 {% endblock %}

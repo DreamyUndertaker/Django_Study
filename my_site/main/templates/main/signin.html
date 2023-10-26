@@ -1,5 +1,6 @@
 {% extends 'main/layout.html' %}
 {% load static %}
+{% block title %} Вход {% endblock %}
 {% block header %}
 <div class="headerNav">
     <div class="headerNavLogo">
@@ -11,7 +12,7 @@
 {% endblock %}
 {% block content %}
 <div class="content">
-    <form action="{% url 'userAccount' %}" class="form">
+    <form action="{% url 'db' %}" class="form">
         <h3 class="formHeader">Войдите в аккаунт</h3>
         <input type="text" name="email" id="email" class="email" placeholder="email" />
         <input
