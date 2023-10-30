@@ -1,6 +1,6 @@
-{% extends 'db/layout_db.html' %}
-{% load static %}
-{% block title %} Добавление записи {% endblock %}
+{% extends 'db/layout_db.html' %} 
+{% load static %} 
+{% block title %} Добавление записи {% endblock %} 
 {% block header %}
 <div class="headerNav">
     <div class="headerNavLogo">
@@ -9,13 +9,13 @@
         </a>
     </div>
 </div>
-{% endblock %}
+{% endblock %} 
 {% block content %}
 <div class="content">
-    <form class="requestForm" method="post">
+    <form action="/results/" method="post" content='text/html; charset=UTF-8' accept-charset="UTF-8" class="requestForm">
         {% csrf_token %} 
-        {{ form.title }} <br>
-        {{ form.full_text }} <br>
+        {{ form.title }} <br />
+        {{ form.full_text }} <br />
         <span>{{ error }}</span>
         <button type="submit" class="buttonAdd">Добавить</button>
     </form>
