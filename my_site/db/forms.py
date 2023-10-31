@@ -1,4 +1,6 @@
-from .models import Articles
+from dataclasses import fields
+from pyexpat import model
+from .models import Articles, Persons
 from django.forms import ModelForm, TextInput
 
 class ArticleForm(ModelForm):
@@ -15,4 +17,32 @@ class ArticleForm(ModelForm):
                 'class': 'aboutRequest',
                 'placeholder': 'описание жалобы'
             }),
+        }
+
+class PersonsForm(ModelForm):
+    class Meta:
+        model = Persons
+        fields = ['surnamePersons', 'namePersons', 'fatherNamePersons', 'jobTitlePersons', 'salaryPersons']
+        widgets1 = {
+            'surnamePersons': TextInput(attrs={
+                # 'class': 'nameRequest',
+                'placeholder': 'Фамилия работника'
+            }),
+            'namePersons': TextInput(attrs={
+                # 'class': 'aboutRequest',
+                'placeholder': 'Имя работника'
+            }),
+            'fatherNamePersons': TextInput(attrs={
+                # 'class': 'nameRequest',
+                'placeholder': 'Фамилия работника'
+            }),
+            'jobTitlePersons': TextInput(attrs={
+                # 'class': 'aboutRequest',
+                'placeholder': 'Должность работника'
+            }),
+            'salaryPersons': TextInput(attrs={
+                # 'class': 'aboutRequest',
+                'placeholder': 'ЗП работника'
+            }),
+
         }

@@ -23,6 +23,23 @@
                     {{ el.full_text }}
                 </h5>
             </div>
+            <div class="persons">
+                <h3>
+                    {{ el.surnamePersons }}
+                </h3>
+                <h3>
+                    {{ el.namePersons }}
+                </h3>
+                <h3>
+                    {{ el.fatherNamePersons }}
+                </h3>
+                <h3>
+                    {{ el.jobTitlePersons }}
+                </h3>
+                <h3>
+                    {{ el.salaryPersons }}
+                </h3>
+            </div>
         {% endfor %}
     {% else %}
         <p>У вас нет заявок</p>

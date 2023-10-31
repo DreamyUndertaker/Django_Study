@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
+from requests import post
 from .models import Articles, Persons, Deposites, ExchangeRates, Clients, DepositsRegistration
-from .forms import ArticleForm
+from .forms import ArticleForm, PersonsForm
 
 # Create your views here.
 def db_home(request):
@@ -15,16 +16,19 @@ def db_home(request):
 def create(request):
     error = ''
     if request.method == 'POST':
-        form = ArticleForm(request.post)
-        if form.is_valid():
-            form.save()
+        formArticle = ArticleForm(request.post)
+        formPersons = PersonsForm(request, post)
+        if formArticle.is_valid():
+            formArticle.save()
+            formPersons.save()
             return redirect('')
         else:
             error = "форма была не верной"
-
-    form = ArticleForm()
+    formPersons = PersonsForm()
+    formArticle = ArticleForm()
     data = {
-        'form': form,
+        'formArticle': formArticle,
+        'formPersons': formPersons,
         'error': error 
     }
     return render(request, 'db/userAccount.html', data)

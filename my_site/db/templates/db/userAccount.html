@@ -16,6 +16,11 @@
         {% csrf_token %} 
         {{ form.title }} <br />
         {{ form.full_text }} <br />
+        {{ form.surnamePersons }} <br />
+        {{ form.namePersons }} <br />   
+        {{ form.fatherNamePersons }} <br />
+        {{ form.jobTitlePersons }} <br />
+        {{ form.salaryPersons }} <br />
         <span>{{ error }}</span>
         <button type="submit" class="buttonAdd">Добавить</button>
     </form>
