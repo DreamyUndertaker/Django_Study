@@ -23,7 +23,8 @@ class Persons(models.Model):
     def __str__(self):
         return f'Сотрудники банка и их должности: {self.title}'
     class Meta:
-        verbose_name = 'Сотрудники банка и их должности'
+        verbose_name = 'Сотрудники банка'
+        verbose_name_plural = 'Сострудников банка'
 
 class Deposites(models.Model):
     CHOICES_CATEGORY = (
@@ -46,6 +47,7 @@ class Deposites(models.Model):
         return f'Виды вкладов: {self.title}'
     class Meta:
         verbose_name = 'Виды вкладов'
+        verbose_name_plural = 'Виды вкладов'
 
 class ExchangeRates(models.Model):
     CHOICES_RATE = (
@@ -60,6 +62,7 @@ class ExchangeRates(models.Model):
         return f'Обменный курс : {self.title}'
     class Meta:
         verbose_name = 'Обменный курс'
+        verbose_name_plural = 'Обменный курс'
 
 class Clients(models.Model):
     surnameClient = models.TextField('Фамилия')
@@ -70,6 +73,7 @@ class Clients(models.Model):
         return f'Клиенты банка: {self.title}'
     class Meta:
         verbose_name = 'Клиенты банка'
+        verbose_name_plural = 'Клиентов банка'
 
 class DepositsRegistration(models.Model):
     surnameClient = models.TextField('Фамилия')
@@ -93,6 +97,7 @@ class DepositsRegistration(models.Model):
         return f'Регистрация вкладов: {self.title}'
     class Meta:
         verbose_name = 'Регистрация вкладов'
+        verbose_name_plural = 'Регистрация вкладов'
 
 
 

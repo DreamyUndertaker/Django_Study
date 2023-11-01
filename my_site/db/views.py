@@ -17,7 +17,7 @@ def create(request):
     error = ''
     if request.method == 'POST':
         formArticle = ArticleForm(request.post)
-        formPersons = PersonsForm(request, post)
+        formPersons = PersonsForm(request.post)
         if formArticle.is_valid():
             formArticle.save()
             formPersons.save()
