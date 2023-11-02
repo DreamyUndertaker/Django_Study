@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from requests import post
 from .models import Articles, Persons, Deposites, ExchangeRates, Clients, DepositsRegistration
 from .forms import ArticleForm, PersonsForm
 
@@ -16,8 +15,8 @@ def db_home(request):
 def create(request):
     error = ''
     if request.method == 'POST':
-        formArticle = ArticleForm(request.post)
-        formPersons = PersonsForm(request.post)
+        formArticle = ArticleForm(request.POST)
+        formPersons = PersonsForm(request.POST)
         if formArticle.is_valid():
             formArticle.save()
             formPersons.save()

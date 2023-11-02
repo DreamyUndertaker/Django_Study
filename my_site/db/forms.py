@@ -1,5 +1,3 @@
-from dataclasses import fields
-from pyexpat import model
 from .models import Articles, Persons
 from django.forms import ModelForm, TextInput
 
@@ -25,23 +23,23 @@ class PersonsForm(ModelForm):
         fields = ['surnamePersons', 'namePersons', 'fatherNamePersons', 'jobTitlePersons', 'salaryPersons']
         widgets1 = {
             'surnamePersons': TextInput(attrs={
-                # 'class': 'nameRequest',
+                'class': 'abouRequest',
                 'placeholder': 'Фамилия работника'
             }),
             'namePersons': TextInput(attrs={
-                # 'class': 'aboutRequest',
+                'class': 'aboutRequest',
                 'placeholder': 'Имя работника'
             }),
             'fatherNamePersons': TextInput(attrs={
-                # 'class': 'nameRequest',
+                'class': 'abouRequest',
                 'placeholder': 'Фамилия работника'
             }),
             'jobTitlePersons': TextInput(attrs={
-                # 'class': 'aboutRequest',
+                'class': 'aboutRequest',
                 'placeholder': 'Должность работника'
             }),
             'salaryPersons': TextInput(attrs={
-                # 'class': 'aboutRequest',
+                'class': 'aboutRequest',
                 'placeholder': 'ЗП работника'
             }),
 
