@@ -14,15 +14,27 @@
 <div class="content">
     <form action="/results/" method="post" content='text/html; charset=UTF-8' accept-charset="UTF-8" class="requestForm">
         {% csrf_token %} 
-        {{ formArticle.title }} <br />
-        {{ formArticle.full_text }} <br />
-        {{ formPersons.surnamePersons }} <br />
-        {{ formPersons.namePersons }} <br />   
-        {{ formPersons.fatherNamePersons }} <br />
-        {{ formPersons.jobTitlePersons }} <br />
-        {{ formPersons.salaryPersons }} <br />
+        <div class="ArticleForm">
+            {{ formArticle.title }} 
+            {{ formArticle.full_text }} 
+        </div>
+        <div class="PersonForm">
+            {{ formPersons.surnamePersons }} 
+            {{ formPersons.namePersons }} 
+            {{ formPersons.fatherNamePersons }} 
+            {{ formPersons.jobTitlePersons }} 
+            {{ formPersons.salaryPersons }}
+        </div>
+        <div class="DepositesForm">
+            {{ formDeposites.depositeCode }}
+            {{ formDeposites.depositeName }}
+            {{ formDeposites.minDepositePeriod }}
+            {{ formDeposites.minDepositeValue }}
+            {{ formDeposites.currencyCode }}
+            {{ formDeposites.interestRate }}
+        </div>
         <span>{{ error }}</span>
-        <button type="submit" class="buttonAdd">Добавить</button>
+        <button type="submit" class="">Добавить</button>
     </form>
 </div>
 {% endblock %}

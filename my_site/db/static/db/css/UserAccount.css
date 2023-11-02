@@ -35,26 +35,24 @@
     .requestForm{
         display: grid;
         padding-top: 40px;
-        grid-template-areas: "nameRequest"
-        "aboutRequest"
-        "buttonAdd";
+        grid-template-areas: "ArticleForm PersonForm DepositesForm";
         max-width: min-content;
+        background-color: burlywood;
         margin: auto;
-        align-items: center;
         align-self: center;
         justify-items: center;
         justify-content: center;
         align-content: center;
         grid-gap: 15px;
     }
-    .nameRequest{
-        grid-area: nameRequest;
+    .ArticleForm{
+        grid-area: ArticleForm;
     }
-    .aboutRequest{
-        grid-area: aboutRequest;
+    .PersonForm{
+        grid-area: PersonForm;
     }
-    .buttonAdd{
-        grid-area: buttonAdd;
+    .DepositesForm{
+        grid-area: DepositesForm;
     }
 }
 @media (max-width: 720px){

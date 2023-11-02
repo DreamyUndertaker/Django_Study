@@ -18,7 +18,7 @@ class Persons(models.Model):
     namePersons = models.TextField('Имя')
     fatherNamePersons = models.TextField('Отчество')
     jobTitlePersons = models.TextField('Должности')
-    salaryPersons = models.IntegerField('Оклад')
+    salaryPersons = models.PositiveBigIntegerField('Оклад')
 
     def __str__(self):
         return f'Сотрудники банка и их должности: {self.title}'
