@@ -35,7 +35,9 @@
     .requestForm{
         display: grid;
         padding-top: 40px;
-        grid-template-areas: "ArticleForm PersonForm DepositesForm";
+        grid-template-areas: "ArticleForm PersonForm"
+        "DepositesForm ClientsForm"
+        "ExchangeRatesForm DepositsRegistrationForm";
         max-width: min-content;
         background-color: burlywood;
         margin: auto;
@@ -53,6 +55,15 @@
     }
     .DepositesForm{
         grid-area: DepositesForm;
+    }
+    .ClientsForm{
+        grid-area: ClientsForm;
+    }
+    .ExchangeRatesForm{
+        grid-area: ExchangeRatesForm;
+    }
+    .DepositsRegistrationForm{
+        grid-area: DepositsRegistrationForm;
     }
 }
 @media (max-width: 720px){

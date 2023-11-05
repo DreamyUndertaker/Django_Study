@@ -1,4 +1,4 @@
-from .models import Articles, Deposites, Persons
+from .models import Articles, Clients, Deposites, DepositsRegistration, ExchangeRates, Persons
 from django.forms import ModelForm, TextInput
 
 class ArticleForm(ModelForm):
@@ -8,11 +8,11 @@ class ArticleForm(ModelForm):
 
         widgets = {
             'title': TextInput(attrs={
-                'class': 'nameRequest',
-                'placeholder': 'навзание жалобы'
+                
+                'placeholder': 'название жалобы'
             }),
             'full_text': TextInput(attrs={
-                'class': 'aboutRequest',
+                
                 'placeholder': 'описание жалобы'
             }),
         }
@@ -23,23 +23,23 @@ class PersonsForm(ModelForm):
         fields = ['surnamePersons', 'namePersons', 'fatherNamePersons', 'jobTitlePersons', 'salaryPersons']
         widgets = {
             'surnamePersons': TextInput(attrs={
-                # 'class': 'abouRequest',
+
                 'placeholder': 'Фамилия работника'
             }),
             'namePersons': TextInput(attrs={
-                # 'class': 'aboutRequest',
+
                 'placeholder': 'Имя работника'
             }),
             'fatherNamePersons': TextInput(attrs={
-                # 'class': 'abouRequest',
+
                 'placeholder': 'Фамилия работника'
             }),
             'jobTitlePersons': TextInput(attrs={
-                # 'class': 'aboutRequest',
+
                 'placeholder': 'Должность работника'
             }),
             'salaryPersons': TextInput(attrs={
-                # 'class': 'aboutRequest',
+
                 'placeholder': 'ЗП работника'
             }),
 
@@ -50,21 +50,117 @@ class DepositesForm(ModelForm):
         fields = ['depositeCode', 'depositeName', 'minDepositePeriod', 'minDepositeValue', 'currencyCode', 'interestRate']
         widgets = {
             'depositeCode': TextInput(attrs={
+
                 'placeholder': 'код вклада'
             }),
             'depositeName': TextInput(attrs={
+
                 'placeholder': 'наименование депозита'
             }), 
             'minDepositePeriod': TextInput(attrs={
+
                 'placeholder': 'минимальный срок вклада'
             }),
             'minDepositeValue': TextInput(attrs={
+
                 'placeholder': 'минимальная сумма вклада'
             }),
             'currencyCode': TextInput(attrs={
+
                 'placeholder': 'код валюты'
             }),
             'interestRate': TextInput(attrs={
+
                 'placeholder': 'процентная ставка, годовая'
-            })
+            }),
         }
+class ClientsForm(ModelForm):
+    class Meta:
+        model = Clients
+        fields = ['surnameClient', 'nameClient', 'fatherNameClient']
+
+        widgets = {
+            'surnameClient': TextInput(attrs={
+                
+                'placeholder': 'Фамилия'
+            }),
+            'nameClient': TextInput(attrs={
+                
+                'placeholder': 'Имя'
+            }),
+            'fatherNameClient': TextInput(attrs={
+                
+                'placeholder': 'Отчество'
+            }),
+        }
+class ExchangeRatesForm(ModelForm):
+    class Meta:
+        model = ExchangeRates
+        fields = ['ratesName', 'exchangeRate']
+
+        widgets = {
+            'ratesName': TextInput(attrs={
+                
+                'placeholder': 'Наименование'
+            }),
+            'exchangeRate': TextInput(attrs={
+                
+                'placeholder': 'Обменный курс'
+            }),
+        }
+class DepositsRegistrationForm(ModelForm):
+    class Meta:
+        model = DepositsRegistration
+        fields = [
+            'surnameClient', 'nameClient', 'fatherNameClient', 'depositeCode', 
+            'depositeDateStart', 'depositeDateEnd', 'depositeSum', 'depositeStatus',
+            'surnamePersons', 'namePersons', 'fatherNamePersons'       
+        ]
+
+        widgets = {
+            'surnameClient': TextInput(attrs={
+                
+                'placeholder': 'Фамилия клиента'
+            }),
+            'nameClient': TextInput(attrs={
+                
+                'placeholder': 'Имя клиента'
+            }),
+            'fatherNameClient': TextInput(attrs={
+                
+                'placeholder': 'Отчество клиента'
+            }),
+            'depositeCode': TextInput(attrs={
+                
+                'placeholder': 'Код вклада'
+            }),
+            'depositeDateStart': TextInput(attrs={
+                
+                'placeholder': 'Дата открытия вклада'
+            }),
+            'depositeDateEnd': TextInput(attrs={
+                
+                'placeholder': 'Дата закрытия вклада'
+            }),
+            'depositeSum': TextInput(attrs={
+                
+                'placeholder': 'Сумма вклада'
+            }),
+            'depositeStatus': TextInput(attrs={
+                
+                'placeholder': 'Статус вклада'
+            }),
+            'surnamePersons': TextInput(attrs={
+                
+                'placeholder': 'Фамилия работника'
+            }),
+            'namePersons': TextInput(attrs={
+                
+                'placeholder': 'Имя работника'
+            }),
+            'fatherNamePersons': TextInput(attrs={
+                
+                'placeholder': 'Отчество работника'
+            }),
+        }
+

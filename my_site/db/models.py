@@ -37,10 +37,18 @@ class Deposites(models.Model):
         ('Eu', 'Евро')
     )
     depositeCode = models.IntegerField('Код вклада')
-    depositeName = models.CharField('Наименование депозита',max_length=30, choices=CHOICES_CATEGORY)
+    depositeName = models.CharField(
+        'Наименование депозита',
+        max_length=10, 
+        choices=CHOICES_CATEGORY
+        )
     minDepositePeriod = models.IntegerField('Минимальный срок вклада')
     minDepositeValue = models.IntegerField('Минимальная сумма вклада')
-    currencyCode = models.CharField('Код валюты', max_length=30, choices=CHOICES_CURRENCY)
+    currencyCode = models.CharField(
+        'Код валюты', 
+        max_length=6, 
+        choices=CHOICES_CURRENCY
+        )
     interestRate = models.IntegerField('Процентная ставка, годовая')
 
     def __str__(self):
