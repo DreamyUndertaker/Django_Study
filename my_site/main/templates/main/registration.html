@@ -11,21 +11,21 @@
 </div>
 {% endblock %}
 {% block content %}
+
+
+
 <div class="content"> 
-    <form action="" class="form">
-        <h3 class="formHeader">Создайте аккаунт</h3>
-        <input type="text" name="email" id="email" class="email" placeholder="email" />
-        <input
-            type="password"
-            name="password"
-            id="password"
-            class="password"
-            placeholder="password"
-        />
-        <input type="submit" value="Войти" class="button" />
+    <h1>Create an account</h1>
+    <p>Please, sign up using the following form:</p>
+    <form action="." method="post">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Create my account"></p>
     </form>
     <div class="linkToSignin">
         <a href="{% url 'signin' %}">Или войти</a>
+        <p>Please, use the following form to log-in. If you don't have an account
+            Пожалуйста, используйте следующую форму для входа. Если у вас нет учетной записи <a href="{% url "registration" %}">register here</a></p>
     </div>
 </div>
 {% endblock %}
