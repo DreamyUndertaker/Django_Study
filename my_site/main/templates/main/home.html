@@ -11,5 +11,106 @@
 </div>
 {% endblock %}
 {% block content %}
-<div class="content"> </div>
+<div class="content">
+    <div class="contentFirstBlock">
+        <div class="contentBlock-header">
+            <h3>
+                Срочная помощь ветеринара <br>
+                и вызов врача на дом
+            </h3>
+        </div>
+        <div class="contentBlock-location">
+            <div class="contentBlock-locationLogo">
+                <img src="{% static 'main/img/mapPoint.png' %}" alt="">
+            </div>
+            <div class="contentBlock-locationP">
+                <p>
+                    Приедем в любую <br>
+                    точку города!
+                </p>
+            </div>
+        </div>
+        <div class="contentBlock-call">
+            <div class="contentBlock-callLogo">
+                <img src="{% static 'main/img/telephone.png' %}" alt="">
+            </div>
+            <div class="contentBlock-callP">
+                <p>
+                    Перезвоним вам <br>
+                    через 30 секунд!
+                </p>
+            </div>
+        </div>
+        <div class="contentForm">
+            <form action="">
+                <h4>ЕСТЬ ВОПРОС?</h4>
+                <p>
+                    НАПИШИТЕ НАМ, И МЫ ВАС <br>
+                    ПРОКОНСУЛЬТИРУЕМ 
+                </p>
+                <input type="text" name="userName" id="userName" placeholder="Имя*">
+                <input type="number" name="userPhone" id="userPhone" placeholder="Телефон*">
+                <input type="text" name="userQuestion" id="userQuestion" placeholder="Ваш вопрос*">
+                <button type="submit">
+                    Отправить
+                </button>
+                <p>
+                    Нажимая на кнопку, вы принимаете <a href="#">Положение</a> и <br>
+                    <a href="№">Согласие</a> на обработку персональных данных
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="contentSecondBlock">
+        <div class="contentSecondBlock-firstElement">
+            <div class="contentSecondBlock-firstElement-logo">
+                <img src="{% static 'main/img/home-button.png' %}" alt="">
+            </div>
+            <div class="contentSecondBlock-firstElement-p">
+                <p>
+                    ВСЕ СЛОЖНЫЕ ОПЕРАЦИИ <br>
+                    ПРОВОДЯТСЯ В СТАЦИОНАРЕ
+                </p>
+            </div>
+        </div>
+        <div class="contentSecondBlock-secondElement">
+            <div class="contentSecondBlock-secondElement-logo">
+                <img src="{% static 'main/img/menu.png' %}" alt="">
+            </div>
+            <div class="contentSecondBlock-secondElement-p">
+                <p>
+                    ВСЕ СЕРТИФИКАТЫ И ДОКУМЕНТЫ <br>
+                    БУДУТ НА РУКАХ У ДОКТОРА
+                </p>
+            </div>
+        </div>
+        <div class="contentSecondBlock-thirdElement">
+            <div class="contentSecondBlock-thirdElement-logo">
+                <img src="{% static 'main/img/stopwatch.png' %}" alt="">
+            </div>
+            <div class="contentSecondBlock-thirdElement-p">
+                <p>
+                    СРОЧНЫЙ ВЫЗОВ <br>
+                    ДО 20 МИНУТ
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contentThirdBlock">
+        <div class="contentThirdBlock-header">
+            <h4>УСЛУГИ И ЦЕНЫ</h4>
+        </div>
+        <div class="contentThirdBlock-firstElement">
+            <img src="{% static 'main/img/photo_2023-11-24_23-20-28.jpg' %}" alt="">
+        </div>
+    </div>
+    <div class="contentFourthBlock">
+        <div class="contentFourthBlock-form">
+            <h3>УБЕДИТЕСЬ ЧТО У НАС ДЕШЕВЛЕ</h3>
+            <h6>ОСТАВЬТЕ ЗАЯВКУ, И МЫ РАСЧИТАЕМ ТОЧНУЮ СТОИМОСТЬ ЛЕЧЕНИЯ ВАШЕГО ПИТОМЦА</h6>
+            <input type="text" name="userName" id="userName" placeholder="Имя*">
+            <input type="number" name="userPhone" id="userPhone" placeholder="Телефон*">
+            <button type="submit">ОТПРАВИТЬ</button>
+        </div>
+    </div>
 {% endblock %}

@@ -11,8 +11,8 @@
 </div>
 {% endblock %} 
 {% block content %}
-<div class="content">
-    <form action="/results/" method="post" content='text/html; charset=UTF-8' accept-charset="UTF-8" class="requestForm">
+<div class="contentDB">
+    <form action="results" method="post" content='text/html; charset=UTF-8' accept-charset="UTF-8" class="requestForm">
         {% csrf_token %} 
         <div class="ArticleForm">
             <h5>Заявки</h5>

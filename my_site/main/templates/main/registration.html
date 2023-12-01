@@ -8,24 +8,22 @@
             <img src="{% static 'main/img/logo.png' %}" alt="" />
         </a>
     </div>
+    <div class="headerNavSignin-link">
+        <a href="{% url 'registration' %}">Войти\зарегистрироваться</a>
+    </div>
 </div>
 {% endblock %}
 {% block content %}
-
-
-
-<div class="content"> 
-    <h1>Create an account</h1>
-    <p>Please, sign up using the following form:</p>
+<div class="contentRegistration"> 
+    <h1>Создайте аккаунт</h1>
+    <p>Пожалуйста зарегистрируйтесь используя следующую форму</p>
     <form action="." method="post">
         {{ user_form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Create my account"></p>
+        <p><input type="submit" value="Создать аккаунт"></p>
     </form>
     <div class="linkToSignin">
         <a href="{% url 'signin' %}">Или войти</a>
-        <p>Please, use the following form to log-in. If you don't have an account
-            Пожалуйста, используйте следующую форму для входа. Если у вас нет учетной записи <a href="{% url "registration" %}">register here</a></p>
     </div>
 </div>
 {% endblock %}
